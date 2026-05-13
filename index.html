@@ -1179,8 +1179,6 @@ function renderWeek(){
     </div>`).join('');
 }
 
-function selectDay(id){ activeDay=id; renderWeek(); renderDetail(id); }
-
 // ─── LOG ENTRIES ──────────────────────────────────────────────
 function saveEntry(){
   const focus=document.getElementById('entryFocus').value;
