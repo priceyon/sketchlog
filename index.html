@@ -1179,25 +1179,6 @@ function renderWeek(){
     </div>`).join('');
 }
 
-function renderDetail(id){
-  const d=state.schedule[id];
-  const el=document.getElementById('dayDetail');
-  if(d.rest){el.innerHTML=`<p style="text-align:center;color:var(--text3);font-family:var(--font-mono);font-size:12px;padding:2rem;">Rest day — your brain consolidates learning while you sleep.</p>`;return;}
-  el.innerHTML=`
-    <div class="detail-top">
-      <h2>${d.label} — ${d.focus}</h2>
-      <span class="focus-tag">${d.duration}</span>
-    </div>
-    <div class="sessions">
-      ${d.sessions.map(s=>`
-        <div class="session">
-          <div class="s-time">${s.time}</div>
-          <div><div class="s-name">${s.name}</div><div class="s-desc">${s.desc}</div></div>
-        </div>`).join('')}
-    </div>
-    ${d.tip?`<div class="tip-strip"><strong>Tip</strong>${d.tip}</div>`:''}`;
-}
-
 function selectDay(id){ activeDay=id; renderWeek(); renderDetail(id); }
 
 // ─── LOG ENTRIES ──────────────────────────────────────────────
